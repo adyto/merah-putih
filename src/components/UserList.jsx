@@ -11,7 +11,6 @@ import { useStateContext } from '../context/StateContext';
 
 const UserList = () => {
   const { results, username, repositories } = useStateContext();
-  console.log(repositories);
 
   return (
     <div className="w-full h-full bg-white">
@@ -32,7 +31,10 @@ const UserList = () => {
                   </AccordionButton>
                   <AccordionPanel className="space-y-2 mt-2 pl-4">
                     {repositories.map((res, i) => (
-                      <div className="flex flex-col bg-gray-300 p-2">
+                      <div
+                        key={res + i}
+                        className="flex flex-col bg-gray-300 p-2"
+                      >
                         <div className="flex flex-row justify-between">
                           <span className="font-bold">{res.name}</span>
                           <div className="flex flex-row items-center gap-1">
