@@ -1,12 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import github from '../api/github';
-import { useStateContext } from '../context/StateContext';
-import {
-  MdOutlineKeyboardArrowUp,
-  MdOutlineKeyboardArrowDown,
-} from 'react-icons/md';
-
-import Collapsible from 'react-collapsible';
+import React from 'react';
 import {
   Accordion,
   AccordionItem,
@@ -14,8 +6,8 @@ import {
   AccordionPanel,
   AccordionIcon,
 } from '@chakra-ui/accordion';
-
 import { AiFillStar } from 'react-icons/ai';
+import { useStateContext } from '../context/StateContext';
 
 const UserList = () => {
   const { results, username, repositories } = useStateContext();
@@ -26,7 +18,7 @@ const UserList = () => {
       <div className="container mx-auto">
         <div className="flex flex-col justify-center items-center w-full h-full gap-4 mt-4">
           <h1>
-            Showing users for "<span className="capitalize">{username}</span>"{' '}
+            Showing users for "<span className="capitalize">{username}</span>"
           </h1>
           <div className="w-full px-6 max-w-2xl">
             <Accordion className="flex flex-col gap-4" allowToggle>
